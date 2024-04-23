@@ -1,6 +1,6 @@
 import random
-from Domain.player import Player
-from Domain.team import Team
+from domain.player import Player
+from domain.team import Team
 
 
 class TeamGenerator:

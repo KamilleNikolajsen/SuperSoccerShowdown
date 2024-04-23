@@ -1,12 +1,11 @@
 import unittest
-
-from Application import teamGenerator
-from infrastructure import fetchData
+from application import team_generator
+from infrastructure import fetch_data
 
 
 class TestGenerateTeams(unittest.TestCase):
     def test_generate_pokemon_team(self):
-        team = teamGenerator.generate_team_v2(fetchData.fetch_pokemon, 'The Pokemon Team', 5,
+        team = team_generator.generate_team_v2(fetch_data.fetch_pokemon, 'The Pokemon Team', 5,
                                               1, 100)
 
         self.assertEqual(len(team.players), 5)
@@ -17,7 +16,7 @@ class TestGenerateTeams(unittest.TestCase):
         self.assertEqual(team.players[4].position, 'Offence')
 
     def test_generate_star_wars_team(self):
-        team = teamGenerator.generate_team_v2(fetchData.fetch_person, 'The Star Wars Team', 5,
+        team = team_generator.generate_team_v2(fetch_data.fetch_person, 'The Star Wars Team', 5,
                                               1, 82)
 
         self.assertEqual(len(team.players), 5)
@@ -28,7 +27,7 @@ class TestGenerateTeams(unittest.TestCase):
         self.assertEqual(team.players[4].position, 'Offence')
 
     def test_fetch_pokemon(self):
-        pokemon = fetchData.fetch_pokemon(1)
+        pokemon = fetch_data.fetch_pokemon(1)
 
         self.assertEqual(len(pokemon), 1)
         self.assertEqual(pokemon[0]['name'], 'bulbasaur')
@@ -36,7 +35,7 @@ class TestGenerateTeams(unittest.TestCase):
         self.assertEqual(pokemon[0]['weight'], 69)
 
     def test_fetch_person(self):
-        person = fetchData.fetch_person(1)
+        person = fetch_data.fetch_person(1)
 
         self.assertEqual(len(person), 1)
         self.assertEqual(person[0]['name'], 'Luke Skywalker')
@@ -44,9 +43,9 @@ class TestGenerateTeams(unittest.TestCase):
         self.assertEqual(person[0]['weight'], '77')
 
     def test_add_player_to_team(self):
-        team = teamGenerator.TeamGenerator(5, 'test_team')
-        player = teamGenerator.Player('player_name', 1, 1, 'test_position')
-        teamGenerator.add_player_to_team(team, player, 'Defence')
+        team = team_generator.TeamGenerator(5, 'test_team')
+        player = team_generator.Player('player_name', 1, 1, 'test_position')
+        team_generator.add_player_to_team(team, player, 'Defence')
 
         self.assertEqual(len(team.players), 1)
         self.assertEqual(team.players[0].name, 'player_name')

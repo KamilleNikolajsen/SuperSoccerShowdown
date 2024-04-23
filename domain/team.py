@@ -1,4 +1,4 @@
-from Domain.player import Player
+from domain.player import Player
 
 
 class Team:
