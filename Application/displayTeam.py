@@ -1,5 +1,3 @@
-
-
 def display_team(team):
     print(f"Team name: {team.name}")
     print(f"Team players:")
@@ -12,4 +10,7 @@ def display_team(team):
         elif player.position == 'Offence':
             print(f"Offence: \nName: {player.name}, Height: {player.height}cm, Weight: {player.weight}kg")
         else:
-            print(f"Name: {player.name}, Height: {player.height}cm, Weight: {player.weight}kg, Position: {player.position}")
+            print(f"Name: {player.name}, Height: {player.height}cm, Weight: {player.weight}kg, "
+                  f"Position: {player.position}")
+
+    print("\n")
