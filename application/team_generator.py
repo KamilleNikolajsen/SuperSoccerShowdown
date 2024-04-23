@@ -10,7 +10,7 @@ class TeamGenerator:
         self.players = []
 
 
-def generate_team_v2(fetch, team_name, team_size, random_number_start, random_number_end):
+def generate_team(fetch, team_name, team_size, random_number_start, random_number_end):
     all_players = []
     random_player_number = generate_random_number(random_number_start, random_number_end, team_size)
 

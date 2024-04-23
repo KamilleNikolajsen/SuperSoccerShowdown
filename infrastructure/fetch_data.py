@@ -2,11 +2,11 @@ import requests
 
 
 def fetch_pokemon(number):
-    url_v2 = f"https://pokeapi.co/api/v2/pokemon/{number}"
-    response = requests.get(url_v2)
+    url = f"https://pokeapi.co/api/v2/pokemon/{number}"
+    response = requests.get(url)
 
     if response.status_code != 200:
-        print(f"Error fetching data from {url_v2}, status code: {response.status_code}")
+        print(f"Error fetching data from {url}, status code: {response.status_code}")
         return []
 
     data = response.json()
@@ -21,8 +21,8 @@ def fetch_pokemon(number):
 
 
 def fetch_person(number):
-    url_v2 = f"https://swapi.py4e.com/api/people/{number}"
-    response = requests.get(url_v2)
+    url = f"https://swapi.py4e.com/api/people/{number}"
+    response = requests.get(url)
     data = response.json()
 
     person = {
