@@ -9,7 +9,7 @@ def print_teams():
     display_team.display_team(pokemon_team)
 
     star_wars_team = team_generator.generate_team_v2(fetch_data.fetch_person, 'Star Wars Team', 5,
-                                                     1, 100)
+                                                     1, 87)
     display_team.display_team(star_wars_team)
 
 
