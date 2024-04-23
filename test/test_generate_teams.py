@@ -5,7 +5,7 @@ from infrastructure import fetch_data
 
 class TestGenerateTeams(unittest.TestCase):
     def test_generate_pokemon_team(self):
-        team = team_generator.generate_team_v2(fetch_data.fetch_pokemon, 'The Pokemon Team', 5,
+        team = team_generator.generate_team(fetch_data.fetch_pokemon, 'The Pokemon Team', 5,
                                               1, 100)
 
         self.assertEqual(len(team.players), 5)
@@ -16,7 +16,7 @@ class TestGenerateTeams(unittest.TestCase):
         self.assertEqual(team.players[4].position, 'Offence')
 
     def test_generate_star_wars_team(self):
-        team = team_generator.generate_team_v2(fetch_data.fetch_person, 'The Star Wars Team', 5,
+        team = team_generator.generate_team(fetch_data.fetch_person, 'The Star Wars Team', 5,
                                               1, 82)
 
         self.assertEqual(len(team.players), 5)
