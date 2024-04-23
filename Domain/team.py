@@ -10,5 +10,4 @@ class Team:
         if isinstance(player, Player):
             self.players.append(player)
         else:
-            raise print("You can only add Player objects to a team")
-
+            raise ValueError("You can only add Player objects to a team")
