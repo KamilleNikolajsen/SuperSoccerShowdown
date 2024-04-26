@@ -4,17 +4,17 @@ from domain.team import Team
 
 
 class TeamGenerator:
-    def __init__(self, team_size, team_name):
-        self.team_name = team_name
-        self.team_size = team_size
+    def __init__(self, size, name):
+        self.name = name
+        self.size = size
         self.players = []
 
 
 def generate_team(fetch, team_name, team_size, random_number_start, random_number_end):
     all_players = []
-    random_player_number = generate_random_number(random_number_start, random_number_end, team_size)
+    random_player_numbers = generate_random_numbers(random_number_start, random_number_end, team_size)
 
-    for number in random_player_number:
+    for number in random_player_numbers:
         all_players.extend(fetch(number))
 
     players = [Player(d['name'], d['height'], d['weight'], d['position']) for d in all_players]
@@ -45,11 +45,11 @@ def generate_team(fetch, team_name, team_size, random_number_start, random_numbe
     return team_data
 
 
-def generate_random_number(start, end, team_size):
-    player_number = []
+def generate_random_numbers(start, end, team_size):
+    player_numbers = []
     for i in range(team_size):
-        player_number.append(random.randint(start, end))
-    return player_number
+        player_numbers.append(random.randint(start, end))
+    return player_numbers
 
 
 def add_player_to_team(team, player, position):
